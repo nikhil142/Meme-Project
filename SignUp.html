@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+    <style>
+        h1
+        {
+            text-align: left;
+            font-family: Arial;
+            padding-left: 40px;
+        }
+        h4{
+            padding-left: 40px;
+            font-family: Arial;
+
+        }
+        button
+        {
+            float: left;
+            font-family: "Arial";
+            box-sizing: content-box;
+            border: none;
+            font-size: larger;
+            border-radius: 2px;
+            background-color: #09f;
+            color: whitesmoke;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function validateemail() {
+        var x = document.myform.email.value;
+        var atposition =x.indexOf("@");
+        var lastposition = x.lastIndexOf(".com");
+        var password = document.myform.password.value;
+        var MobileNo = document.myform.MobileNo.value;
+        var LastName = document.myform.LastName.value;
+        if(atposition<1||lastposition<atposition+2||lastposition+2>x.length)
+        {
+            alert("please enter valid email address");
+            return false;
+        }
+        else if(password.length<6)
+        {
+            alert("password must be at least 6 character long.");
+            return false;
+        }
+        else if(MobileNo.length<6 )
+        {
+            alert("valid enterd mobile no");
+            return false;
+        }
+        else if(FullName==null && LastName==null && MobileNo==null && email==null)
+        {
+
+            alert("please enter the detail");
+        }
+        else {
+            alert("successfull submit")
+        }
+    }
+</script>
+<table>
+    <form name ="myform" method ="post" onsubmit=" return validateemail();">
+    <tr>
+        <h1>Become a member </h1>
+    </tr>
+    <tr>
+        <h4>Full Name<br>
+        <input type="text" name="FullName" size="45" maxlength="20%">
+        </h4>
+        <h4>Last Name<br>
+            <input type ="text" name="LastName" size="45" maxlength="20%">
+        </h4>
+        <h4>
+            Mobile No<br>
+            <input type="text" name="MobileNo" size="45" maxlength="50%">
+        </h4>
+        <h4>Email Address<br>
+        <input type="text" name="email" size="45" maxlength="100%">
+    </h4>
+        <h4>Password<br>
+        <input type ="password" name ="password"  size="45" maxlength="20%">
+        </h4>
+            <br>
+    </tr>
+        <td><h4><button>Sign Up</button></h4></td>
+    <td><h4><a href="SignUp.html"><button>Reset</button></a></h4></td>
+    </form>
+</table>
+</body>
+</html>
